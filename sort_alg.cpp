@@ -164,6 +164,8 @@ void heapSort(int *arr, int n) {
 int main() {
 
     int *arr = (int*)malloc(100000000*sizeof(int));
+    
+    //set the size of the dataset, with a maximum of 1 million
     int n = 100000;
 
     srand((unsigned) time(NULL));
@@ -171,6 +173,7 @@ int main() {
     std::cout << "Before Sorting Array: " << std::endl;
 
     for (int i = 0; i < n; i++) {
+        //assign random values
         arr[i] = rand();
     }
 
@@ -179,8 +182,10 @@ int main() {
     }
     std::cout << std::endl;
 
+    //start measuring the execution time of the sorting algorithm
     auto start = high_resolution_clock::now();
 
+    //call the sorting function
     heapSort(arr, n);
 
     auto stop = high_resolution_clock::now();
